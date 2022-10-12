@@ -20,4 +20,11 @@ export class VersiculoBibliaComponent implements OnInit {
     })
   }
 
+  getEvangelho() {
+    this._bibliaService.getVersiculoBiblia().subscribe((response) => {
+      console.log(response); 
+      this.versoBiblia = response;
+    })
+  }
+
 }
