@@ -9,18 +9,22 @@ import { BibliaService } from 'src/app/services/biblia.service';
 export class VersiculoBibliaComponent implements OnInit {
 
   public versoBiblia: any;
+  showLoading : boolean = true;
+
   constructor(
     private _bibliaService: BibliaService,
   ) { }
 
   ngOnInit(): void {
     this._bibliaService.getVersiculoBiblia().subscribe((response) => {
-      console.log(response); 
+      if (response) {
+        this.showLoading = false;
+      }      
       this.versoBiblia = response;
     })
   }
 
-  getEvangelho() {
+  getEvangelhoAleatorio() {
     this._bibliaService.getVersiculoBiblia().subscribe((response) => {
       console.log(response); 
       this.versoBiblia = response;
