@@ -26,22 +26,11 @@ export class BibliaService {
   public getApostoloAleatoriamente() {
     return this.apostolos[Math.floor(Math.random()*this.apostolos.length)];
   }
-  
-  public openSnackBar() {
-    this._snackBar.open('Evangelho inexistente.', 'Fechar', {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
-  }
 
   public getVersiculoBiblia(): Observable<any> {
     let apostolo = this.getApostoloAleatoriamente();
     let primeiroNumeroVersiculo = Math.floor(Math.random() * 5) + 1;
     let segundoNumeroVersiculo = Math.floor(Math.random() * 15) + 1;
-    
-    if(segundoNumeroVersiculo < primeiroNumeroVersiculo) {
-      this.openSnackBar();
-    }
 
     return this._httpClient.get(`${this.baseURL+apostolo+'+10:'+primeiroNumeroVersiculo+'-'+segundoNumeroVersiculo}?translation=almeida`).pipe(
       tap((data: any) => {

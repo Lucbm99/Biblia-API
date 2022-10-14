@@ -4,7 +4,8 @@
     </div>
 
     <h2 class="apostolo">Evangelho segundo: {{versoBiblia?.reference}}</h2>
-    <mat-card class="texto-evangelho">{{versoBiblia?.text}}</mat-card>
+    <mat-card class="texto-evangelho" *ngIf="!versoBiblia?.text">Evangelho inexistente.</mat-card>
+    <mat-card class="texto-evangelho" *ngIf="versoBiblia?.text">{{versoBiblia?.text}}</mat-card>
 
     <div class="alterar-evangelho">
         <button 
