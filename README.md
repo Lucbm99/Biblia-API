@@ -35,7 +35,7 @@ NPM: https://npmjs.com
 
 🚧 Finalizado 🚧
 
-Link da aplicação: https://evangelho-apostolos.vercel.app/
+Link da aplicação: https://evangelho-apostolos.vercel.app
 
 
 ## 🛠️ Feito com
